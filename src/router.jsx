@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react"
 import AuthPage from "./pages/auth/AuthPage"
 import DashboardLayout from "./components/layout/DashboardLayout"
 
-// Lazy load all dashboard pages
+// Lazy load all dashboard pages without delay
 const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"))
 const MyTickets = lazy(() => import("./pages/dashboard/MyTickets"))
 const AllTickets = lazy(() => import("./pages/dashboard/AllTickets"))

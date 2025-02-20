@@ -6,17 +6,27 @@ import { Menu, Search, Sun, Moon } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import Sidebar from "./Sidebar"
 import { DashboardSkeleton } from "@/components/skeletons/DashboardSkeleton"
+import { TicketsSkeleton } from "@/components/skeletons/TicketsSkeleton"
+import { UsersSkeleton } from "@/components/skeletons/UsersSkeleton"
 import { TableSkeleton } from "@/components/skeletons/TableSkeleton"
 
 function LoadingFallback() {
   const location = useLocation()
-  
-  // Return appropriate skeleton based on route
-  if (location.pathname === '/dashboard') {
+  const path = location.pathname
+
+  if (path === '/dashboard') {
     return <DashboardSkeleton />
   }
   
-  // For routes that show tables (tickets, users, etc)
+  if (path === '/dashboard/my-tickets' || path === '/dashboard/all-tickets') {
+    return <TicketsSkeleton />
+  }
+
+  if (path === '/dashboard/users') {
+    return <UsersSkeleton />
+  }
+
+  // Default to TableSkeleton for other pages
   return <TableSkeleton />
 }
 
