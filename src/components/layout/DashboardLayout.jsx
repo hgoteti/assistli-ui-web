@@ -1,10 +1,24 @@
-import { useState } from "react"
-import { Outlet } from "react-router-dom"
+import { useState, Suspense } from "react"
+import { Outlet, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Menu, Search, Sun, Moon } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import Sidebar from "./Sidebar"
+import { DashboardSkeleton } from "@/components/skeletons/DashboardSkeleton"
+import { TableSkeleton } from "@/components/skeletons/TableSkeleton"
+
+function LoadingFallback() {
+  const location = useLocation()
+  
+  // Return appropriate skeleton based on route
+  if (location.pathname === '/dashboard') {
+    return <DashboardSkeleton />
+  }
+  
+  // For routes that show tables (tickets, users, etc)
+  return <TableSkeleton />
+}
 
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -56,7 +70,9 @@ export default function DashboardLayout() {
 
         {/* Page Content */}
         <main className="p-6">
-          <Outlet />
+          <Suspense fallback={<LoadingFallback />}>
+            <Outlet />
+          </Suspense>
         </main>
       </div>
     </div>
