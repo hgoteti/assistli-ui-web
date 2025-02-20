@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import logo from "@/assets/logo.webp"
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
@@ -31,9 +32,14 @@ export default function Sidebar() {
   const location = useLocation()
 
   return (
-    <div className="flex h-full w-64 flex-col border-r bg-card">
-      <div className="flex h-16 items-center border-b px-6">
-        <span className="text-lg font-semibold">Acme Inc</span>
+    <div className="flex h-full w-64 flex-col border-r bg-gray-50 dark:bg-gray-800/50">
+      <div className="flex h-16 items-center border-b px-6 bg-white dark:bg-gray-800">
+        <img 
+          src={logo} 
+          alt="Assistly Logo" 
+          className="h-8 w-8 mr-2"
+        />
+        <span className="text-lg font-semibold">Assistly</span>
       </div>
 
       <ScrollArea className="flex-1 px-3 py-2">
@@ -57,7 +63,7 @@ export default function Sidebar() {
         </nav>
       </ScrollArea>
 
-      <div className="border-t p-4">
+      <div className="border-t p-4 bg-white dark:bg-gray-800">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="w-full justify-start px-2">
