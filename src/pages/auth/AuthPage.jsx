@@ -31,7 +31,7 @@ export default function AuthPage() {
 
   const renderLogin = () => (
     <div className={`h-full flex flex-col transition-transform duration-300 ease-in-out ${getEnterClass()}`}>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Welcome back</CardTitle>
         <CardDescription>Sign in to your account</CardDescription>
       </CardHeader>
@@ -89,7 +89,7 @@ export default function AuthPage() {
           <ChevronLeft className="h-4 w-4" />
         </Button>
       </div>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Reset password</CardTitle>
         <CardDescription>Enter your email to reset your password</CardDescription>
       </CardHeader>
@@ -118,7 +118,7 @@ export default function AuthPage() {
           <ChevronLeft className="h-4 w-4" />
         </Button>
       </div>
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>Login with OTP</CardTitle>
         <CardDescription>We'll send a code to your email</CardDescription>
       </CardHeader>
