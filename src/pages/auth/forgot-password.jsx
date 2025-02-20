@@ -7,7 +7,7 @@ import { ChevronLeft } from "lucide-react"
 export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+      <Card className="w-[400px]">
         <CardHeader>
           <div className="flex items-center">
             <Link to="/auth/login">
