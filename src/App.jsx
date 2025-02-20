@@ -6,6 +6,7 @@ import LoginPage from "./pages/auth/login"
 import ForgotPasswordPage from "./pages/auth/forgot-password"
 import LoginOTPPage from "./pages/auth/login-otp"
 import { createBrowserRouter } from 'react-router-dom'
+import AuthPage from "./pages/auth/AuthPage"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,7 +38,7 @@ function App() {
 }
 
 export const router = createBrowserRouter([
-  {
+  /*{
     path: "/auth/login",
     element: <LoginPage />,
   },
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
   {
     path: "/auth/login-otp",
     element: <LoginOTPPage />,
+  },*/
+  {
+    path: "/auth/*",
+    element: <AuthPage />,
   },
 ])
 
