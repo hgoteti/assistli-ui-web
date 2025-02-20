@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <Card className="w-[400px]">
+      <Card className="w-[400px] h-[450px]">
         <CardHeader>
           <CardTitle>Welcome back</CardTitle>
           <CardDescription>Sign in to your account</CardDescription>
