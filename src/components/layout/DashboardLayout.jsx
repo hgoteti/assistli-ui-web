@@ -1,11 +1,12 @@
 import { useState } from "react"
+import { Outlet } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Menu, Search, Sun, Moon } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import Sidebar from "./Sidebar"
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const { theme, setTheme } = useTheme()
 
@@ -55,7 +56,7 @@ export default function DashboardLayout({ children }) {
 
         {/* Page Content */}
         <main className="p-6">
-          {children}
+          <Outlet />
         </main>
       </div>
     </div>
