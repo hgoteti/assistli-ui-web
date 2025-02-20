@@ -2,6 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import LoginPage from "./pages/auth/login"
+import ForgotPasswordPage from "./pages/auth/forgot-password"
+import LoginOTPPage from "./pages/auth/login-otp"
+import { createBrowserRouter } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,5 +35,20 @@ function App() {
     </>
   )
 }
+
+export const router = createBrowserRouter([
+  {
+    path: "/auth/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/auth/forgot-password",
+    element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/auth/login-otp",
+    element: <LoginOTPPage />,
+  },
+])
 
 export default App
